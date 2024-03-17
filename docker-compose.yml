@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+  generate-job-scheduler:
+    image: wonyus/update-status:latest
+    container_name: generate-job-scheduler
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    volumes:
+      - .:/app
